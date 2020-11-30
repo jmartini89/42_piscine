@@ -1,0 +1,6 @@
+Credentials cache: API:C96F2917-236E-4420-A62A-4289E102D5C2
+        Principal: jmartini@42ROMA.IT
+
+  Issued                Expires               Principal
+Nov 28 11:10:49 2020  Nov 28 21:10:49 2020  krbtgt/42ROMA.IT@42ROMA.IT
+Nov 28 11:10:51 2020  Nov 28 21:10:49 2020  HTTP/storage.42roma.it@42ROMA.IT
