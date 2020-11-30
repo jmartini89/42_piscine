@@ -7,10 +7,10 @@ void ft_print_comb2(void)
 	char m;
 	char n;
 
-	x = '0';
-	y = '0';
-	m = '0';
-	n = m + 1;
+	x = '1';
+	y = '2';
+	m = '1';
+	n = '5';
 	while(x <= '9')
 	{
 		while(y <= '9')
@@ -35,9 +35,11 @@ void ft_print_comb2(void)
 		m = '0';
 		n = y + 1;
 		}
-	x++;//QUALQUADRA NON COSA IN QUESTE TRE CAGATE CHE HO SCRITTO QUA SOTTO, PORCODIO
+	x++;
 	y = '0';
 	m = x + 1;
+	if(x * 10 + y < m * 10 + n)
+			return;
 	}
 }
 
