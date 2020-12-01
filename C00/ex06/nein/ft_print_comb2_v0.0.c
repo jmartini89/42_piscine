@@ -7,10 +7,10 @@ void ft_print_comb2(void)
 	char m;
 	char n;
 
-	x = '1';
-	y = '2';
-	m = '1';
-	n = '5';
+	x = '0';
+	y = '0';
+	m = '0';
+	n = m + 1;
 	while(x <= '9')
 	{
 		while(y <= '9')
@@ -19,6 +19,13 @@ void ft_print_comb2(void)
 			{
 				while (n <= '9')
 				{
+					if((x * 10 + y) == 626)
+					{
+						write(1, "98 99", 5);
+						return;
+					}
+					else if(x * 10 + y < m * 10 + n)
+					{
 					write(1, &x,1);
 					write(1, &y,1);
 					write(1, " ", 1);
@@ -26,7 +33,8 @@ void ft_print_comb2(void)
 					write(1, &n, 1);
 					write(1, ",", 1);
 					write(1, " ", 1);
-					n++;
+					}
+				n++;	
 				}
 			m++;
 			n = '0';
@@ -38,8 +46,6 @@ void ft_print_comb2(void)
 	x++;
 	y = '0';
 	m = x + 1;
-	if(x * 10 + y < m * 10 + n)
-			return;
 	}
 }
 

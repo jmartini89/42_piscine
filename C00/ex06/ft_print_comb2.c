@@ -1,51 +1,40 @@
 #include <unistd.h>
 
+int x;
+int y;
+char a;
+
+void	ft_putchar(char a)
+{
+	write(1, &a, 1);
+}
+
 void ft_print_comb2(void)
 {
-	char x;
-	char y;
-	char m;
-	char n;
-
-	x = '0';
-	y = '0';
-	m = '0';
-	n = m + 1;
-	while(x <= '9')
+	x = 0;
+	y = 1;
+	while(x < 99)
 	{
-		while(y <= '9')
+		while(y <= 99)
 		{
-			while (m <= '9')
+			if(x == 98)
 			{
-				while (n <= '9')
-				{
-					if((x * 10 + y) == 626)
-					{
-						write(1, "98 99", 5);
-						return;
-					}
-					else if(x * 10 + y < m * 10 + n)
-					{
-					write(1, &x,1);
-					write(1, &y,1);
-					write(1, " ", 1);
-					write(1, &m, 1);
-					write(1, &n, 1);
-					write(1, ",", 1);
-					write(1, " ", 1);
-					}
-				n++;	
-				}
-			m++;
-			n = '0';
+				write(1, "98 99", 5);
+				return;
+			}
+			else if(x < y)
+			{
+			ft_putchar(x / 10 + 48);
+			ft_putchar(x % 10 + 48);
+			ft_putchar(' ');
+			ft_putchar(y / 10 + 48);
+			ft_putchar(y % 10 + 48);
+			write(1, ", ", 2);
 			}
 		y++;
-		m = '0';
-		n = y + 1;
 		}
+	y = 0;
 	x++;
-	y = '0';
-	m = x + 1;
 	}
 }
 
