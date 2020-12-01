@@ -1,0 +1,1 @@
+ifconfig -a | grep -o -e [[:xdigit:]]:[[:xdigit:]]:[[:xdigit:]]:[[:xdigit:]]:[[:xdigit:]]:[[:xdigit:]]
