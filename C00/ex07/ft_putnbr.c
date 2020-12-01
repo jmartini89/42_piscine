@@ -10,7 +10,11 @@ void	ft_putchar(char a)
 
 void	ft_putnbr(int nb)
 {
-	if(nb == -2147483648 || nb < 0)//MIN INT NOT WORKING !!!
+	if(nb == -2147483648)//DAFARE
+	{
+		write -2147483648
+	}
+	else if (nb < 0)
 	{
 		ft_putchar('-');
 		ft_putnbr(nb * -1);
@@ -28,5 +32,5 @@ void	ft_putnbr(int nb)
 
 int	main(void)
 {
-	ft_putnbr(-480);
+	ft_putnbr(-2147483648);
 }
