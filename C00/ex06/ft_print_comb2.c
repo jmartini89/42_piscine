@@ -19,7 +19,7 @@ void ft_print_comb2(void)
 		{
 			if(x == 98)
 			{
-				write(1, "98 99", 5);
+				write(1, "98 99\n", 6);
 				return;
 			}
 			else if(x < y)
