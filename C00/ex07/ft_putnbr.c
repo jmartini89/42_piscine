@@ -1,8 +1,6 @@
 #include <unistd.h>
-#include <stdio.h>//TESTING PURPOSE!
 
 int nb;
-int c;
 char a;
 
 void	ft_putchar(char a)
@@ -10,18 +8,25 @@ void	ft_putchar(char a)
 	write(1, &a, 1);
 }
 
-void	ft_count(c)//count character & print?
-{
-	//write(1, &c, sizeof(c));
-	printf("%lu\n", sizeof(c));//TESTING PURPOSE
-} 
-
 void	ft_putnbr(int nb)
 {
-	ft_count(nb);//send to counter
+	if(nb == -2147483648 || nb < 0)//MIN INT NOT WORKING !!!
+	{
+		ft_putchar('-');
+		ft_putnbr(nb * -1);
+	}
+	else if(nb < 10)//send to write!
+	{
+		ft_putchar(nb + 48);
+	}
+	else if(nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
 
 int	main(void)
 {
-	ft_putnbr(1);
+	ft_putnbr(-480);
 }
