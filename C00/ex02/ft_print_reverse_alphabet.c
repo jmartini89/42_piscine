@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 16:52:31 by jmartini          #+#    #+#             */
-/*   Updated: 2020/11/28 16:52:34 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/02 13:38:30 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/02 13:54:35 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char x;
 
@@ -22,9 +22,4 @@ void	ft_print_alphabet(void)
 		write(1, &x, 1);
 		x--;
 	}
-}
-
-int		main(void)
-{
-	ft_print_alphabet();
 }

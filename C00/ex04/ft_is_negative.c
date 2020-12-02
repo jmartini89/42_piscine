@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 18:40:45 by jmartini          #+#    #+#             */
-/*   Updated: 2020/11/28 18:40:48 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/02 13:59:40 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/02 14:03:17 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,4 @@ void	ft_is_negative(int n)
 	{
 		write(1, &b, 1);
 	}
-}
-
-int		main(void)
-{
-	ft_is_negative(0);
 }

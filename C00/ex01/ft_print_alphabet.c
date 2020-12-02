@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 16:36:30 by jmartini          #+#    #+#             */
-/*   Updated: 2020/11/28 16:36:33 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/02 13:33:13 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/02 13:56:50 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,4 @@ void	ft_print_alphabet(void)
 		write(1, &x, 1);
 		x++;
 	}
-}
-
-int		main(void)
-{
-	ft_print_alphabet();
 }
