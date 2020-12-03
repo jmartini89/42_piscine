@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 14:04:19 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/03 11:43:03 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/03 17:58:28 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/03 18:34:14 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-#include <unistd.h>
-
-void	ft_putchar(char a, char b, char c)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
-	write(1, &c, 1);
+	*div = a / b;
+	*mod = a % b;
 }
 
-void	ft_print_comb(void)
+int		main(void)
 {
-	char a;
-	char b;
-	char c;
+	// div 10 / 4 = 2 ; mod 10 % 4 = 2 ;
+	// a / b --> div to div, mod to mod
+	int a;
+	int b;
+	int div;
+	int mod;
 
-	a = '0';
-	while (a < '7')
-	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				ft_putchar(a, b, c);
-				write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
-	}
-	write(1, "789\n", 4);
+	a = 74;
+	b = 12;
+	div = 0;
+	mod = 0;
+	ft_div_mod(a, b, &div, &mod);
+	printf("%d, %d", div, mod);
 }

@@ -1,46 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 14:04:19 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/03 11:43:03 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/03 15:46:42 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/03 17:55:25 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-#include <unistd.h>
-
-void	ft_putchar(char a, char b, char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
-	write(1, &c, 1);
+	int c;
+
+	c = *a;//variabile c = contenuto dell'indirizzo a (x)
+	*a = *b;//contenuto indirizzo a (x) = contenuto indirizzo b (y) ; sovrascrivo x con y
+	*b = c;//contenuto indirizzo b = variabile c ; sovrascrivo y con c
 }
 
-void	ft_print_comb(void)
+int		main(void)
 {
-	char a;
-	char b;
-	char c;
+	int x;
+	int y;
 
-	a = '0';
-	while (a < '7')
-	{
-		b = a + 1;
-		while (b <= '8')
-		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				ft_putchar(a, b, c);
-				write(1, ", ", 2);
-				c++;
-			}
-			b++;
-		}
-		a++;
-	}
-	write(1, "789\n", 4);
+	x = 8;
+	y = 4;
+	ft_swap(&x, &y);
+	printf("%d, %d", x, y);
 }
