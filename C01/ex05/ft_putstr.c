@@ -6,17 +6,17 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 19:26:45 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/03 19:52:24 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/05 13:54:00 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
-	asd
-}
-
-int		main(void)
-{
-	asd
+	while (*str > 0)
+	{
+		write(1, str, 1);
+		str++;
+	}
 }

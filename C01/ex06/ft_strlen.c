@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 17:58:28 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/05 14:29:27 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/05 13:56:23 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/05 14:12:28 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int		ft_strlen(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int cntr;
+
+	cntr = 0;
+	while (str[cntr])
+	{
+		cntr++;
+	}
+	return (cntr);
 }

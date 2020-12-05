@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 17:58:28 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/05 14:29:27 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/03 19:26:45 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/03 19:52:24 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_putstr(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	asd
+}
+
+int		main(void)
+{
+	asd
 }
