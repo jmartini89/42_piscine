@@ -24,3 +24,5 @@ int		main(void)
 	ft_strcpy(dest, src);
 	printf("%s", dest);
 }
+
+//CONTROLLARE DEST BIGGER THAN SRC
