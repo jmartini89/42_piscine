@@ -6,11 +6,9 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 15:58:46 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/07 16:15:21 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/08 18:15:45 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_str_is_lowercase(char *str)
 {
@@ -25,13 +23,4 @@ int		ft_str_is_lowercase(char *str)
 			return (0);
 	}
 	return (1);
-}
-
-int		main(void)
-{
-	char str[] = "at0ani";
-	int output;
-
-	output = ft_str_is_lowercase(str);
-	printf("%d", output);
 }

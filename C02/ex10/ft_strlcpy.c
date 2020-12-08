@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/07 15:28:07 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/08 19:29:27 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/08 19:31:18 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/08 20:12:26 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_check(char c)
+#include <stdio.h>
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
+	asd
 }
 
-int		ft_str_is_alpha(char *str)
+int				main(void)
 {
-	int i;
+	unsigned int size = 6; 
+	char dest[] = "antani";
+	char src[] = "XYZ";
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (ft_check(str[i]) == 1)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	printf("%s", ft_strlcpy(dest, src, size));
 }
+
+//man strlcpy
+//man snprintf

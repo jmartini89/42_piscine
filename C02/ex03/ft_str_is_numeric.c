@@ -6,11 +6,9 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 15:52:02 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/07 15:58:14 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/08 18:17:33 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_str_is_numeric(char *str)
 {
@@ -25,13 +23,4 @@ int		ft_str_is_numeric(char *str)
 			return (0);
 	}
 	return (1);
-}
-
-int		main(void)
-{
-	char str[] = "";
-	int output;
-
-	output = ft_str_is_numeric(str);
-	printf("%d", output);
 }

@@ -6,11 +6,9 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 16:16:24 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/07 16:20:58 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/08 18:13:33 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_str_is_uppercase(char *str)
 {
@@ -25,13 +23,4 @@ int		ft_str_is_uppercase(char *str)
 			return (0);
 	}
 	return (1);
-}
-
-int		main(void)
-{
-	char str[] = "PAPAPA";
-	int output;
-
-	output = ft_str_is_uppercase(str);
-	printf("%d", output);
 }

@@ -6,40 +6,26 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:29:57 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/07 15:21:33 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/08 19:06:51 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int index;
+	int i;
 
-	index = 0;
-	while (src[index] != '\0')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		dest[index] = src[index];
-		index++;
+		dest[i] = src[i];
+		i++;
 		n--;
 	}
 	while (n > 0)
 	{
-		dest[index] = '\0';
-		index++;
+		dest[i] = '\0';
+		i++;
 		n--;
 	}
 	return (dest);
-}
-
-int main(void)
-{
-	unsigned int size;
-	char src[] = "XYZ";
-	char dest[] = "antani";
-
-	size = 6;
-	ft_strncpy(dest, src, size);
-	printf("%s\n", dest);
 }
