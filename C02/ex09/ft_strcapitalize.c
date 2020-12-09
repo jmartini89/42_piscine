@@ -6,7 +6,7 @@
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 17:37:02 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/08 19:21:00 by jmartini         ###   ########.fr       */
+/*   Updated: 2020/12/09 17:39:36 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ char	*ft_strcapitalize(char *str)
 	int i;
 
 	i = 0;
+	if (i == 0 && ft_alphanum(str[i]) == 2)
+	{
+		str[i] = str[i] - 32;
+		i++;
+	}
 	while (str[i] != '\0')
 	{
 		if (ft_alphanum(str[i]) == 2 && ft_alphanum(str[i - 1]) == 3)
