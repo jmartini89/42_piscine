@@ -1,46 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 14:04:19 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/09 14:06:53 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/09 12:19:09 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/09 12:19:56 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char a, char b, char c)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
-	write(1, &c, 1);
-}
+	unsigned int i;
 
-void	ft_print_comb(void)
-{
-	char a;
-	char b;
-	char c;
-
-	a = '0';
-	while (a < '7')
+	i = 0;
+	if (size != 0)
 	{
-		b = a + 1;
-		while (b <= '8')
+		while (i < (size - 1) && src[i] != '\0')
 		{
-			c = b + 1;
-			while (c <= '9')
-			{
-				ft_putchar(a, b, c);
-				write(1, ", ", 2);
-				c++;
-			}
-			b++;
+			dest[i] = src[i];
+			i++;
 		}
-		a++;
+		dest[i] = '\0';
 	}
-	write(1, "789", 3);
+	else if (size == 0)
+		dest[i] = '\0';
+	return (i);
 }
