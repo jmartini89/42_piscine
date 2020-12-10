@@ -1,0 +1,20 @@
+ex01
+SED, stream editor
+the sed expression s/~/ /g replaces every tilde with a space character. It means, literally, "substitute everything that matches the regular expression ~ with a space, globally (on the whole input line)". The expression could in this case also have been written as the quicker y/~/ /, and the whole sed command could be replaced by the even faster tr '~' ' '.
+
+ex02
+BASENAME, strip directory and suffix from filenames
+Print NAME with any leading directory components removed.  If specified, also remove a trailing SUFFIX.
+
+ex03
+ez
+
+ex04
+grep searches for PATTERNS in each FILE.  PATTERNS is one or more patterns separated by newline characters, and grep prints each line  that  matches  a  pattern. Typically PATTERNS should be quoted when grep is used in a shell command. 
+--only-matching
+
+ex06
+SED, stream editor
+-s (--separate)
+consider files as separate rather than as a single, continuous long stream
+p = print, n = suppress

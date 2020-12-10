@@ -1,0 +1,16 @@
+++i prima incrementa i e poi esegue l'operazione
+i++ il viceversa
+
+
+i = 0
+a[++i] = 1
+
+metti a[1] a 1 e i==1 ora
+
+
+
+
+i =0
+a[i++] =1
+
+mette a[0] a 1 e i==1
