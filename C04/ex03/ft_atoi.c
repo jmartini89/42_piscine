@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/11 12:53:44 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/11 16:53:03 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/11 15:34:00 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/11 16:39:25 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_atoi(char *str)
 {
-	unsigned int i;
-
-	i = 0;
-	if (i == n)
-		return (0);
-	while (i + 1 < n && (s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i]))
-		i++;
-	return (s1[i] - s2[i]);
+	//
 }
+//3 while non innestati
+//
+//
