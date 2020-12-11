@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 13:17:49 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/11 13:10:45 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/11 13:11:51 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/11 13:20:12 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *tofind)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
-	int j;
-	int k;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
 	j = 0;
-	while (str[j] != '\0')
+	while (dest[i] != '\0')
+		i++;
+	while ((src[j] != '\0') && j < nb)
 	{
-		if (tofind[i] == str[j])
-		{
-			k = j;
-			while (tofind[i] == str[k])
-			{
-				i++;
-				k++;
-				if (tofind[i] == '\0')
-					return (&str[j]);
-				if (str[k] == '\0')
-					k = 0;
-			}
-		}
+		dest[i] = src[j];
+		i++;
 		j++;
 	}
-	return ('\0');
+	dest[i] = '\0';
+	return (dest);
 }

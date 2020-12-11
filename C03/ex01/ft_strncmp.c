@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmartini <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 13:17:49 by jmartini          #+#    #+#             */
-/*   Updated: 2020/12/11 13:10:45 by jmartini         ###   ########.fr       */
+/*   Created: 2020/12/11 12:53:44 by jmartini          #+#    #+#             */
+/*   Updated: 2020/12/11 13:00:12 by jmartini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *tofind)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
-	int j;
-	int k;
+	unsigned int i;
 
 	i = 0;
-	j = 0;
-	while (str[j] != '\0')
-	{
-		if (tofind[i] == str[j])
-		{
-			k = j;
-			while (tofind[i] == str[k])
-			{
-				i++;
-				k++;
-				if (tofind[i] == '\0')
-					return (&str[j]);
-				if (str[k] == '\0')
-					k = 0;
-			}
-		}
-		j++;
-	}
-	return ('\0');
+	if (i == n)
+		return (0);
+	while (i < n && (s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i]))
+		i++;
+	return (s1[i] - s2[i]);
 }
