@@ -49,5 +49,3 @@ int 	main()
 	char test[] = "        --1234 ab567";
 	printf("EMULAZIONE: %d\n", ft_atoi(test));
 }
-
-//3 while non innestati
