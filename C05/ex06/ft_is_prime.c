@@ -29,6 +29,6 @@ int		ft_is_prime(int nb)
 
 int		main()
 {
-	int nb = 5;
+	int nb = 177;
 	printf("%d\n", ft_is_prime(nb));
 }
