@@ -29,6 +29,11 @@ int		ft_is_prime(int nb)
 
 int		main()
 {
-	int nb = 177;
+	int nb = 7921;
 	printf("%d\n", ft_is_prime(nb));
 }
+/*
+SERIOUS BUG!
+7921 is NOT a prime number.
+TRY AGAIN
+*/
