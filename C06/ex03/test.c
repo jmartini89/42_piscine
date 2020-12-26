@@ -3,14 +3,34 @@
 int		main()
 {
 	int it;
-	char *array[2];
-	char **out[2];
+	int it2;
+	int src;
+	int array[2];
+	int *out[2];
 
 	it = 0;
-	array[0] = "cane";
-	array[1] = "gatto";
-	out[0] = &array[0];
-	printf("%s\n", array[0]);
-	printf("%p\n", array[0]);
-	printf("%p\n", *out[0]);
+	it2 = 0;
+	src = 0;
+	array[0] = 20;
+	array[1] = 10;
+	//out[0] = &array[0];
+	/*printf("%d\n", array[0]);
+	printf("%p\n", &array[0]);
+	printf("%d\n", *out[0]);*/
+	while (it < 3)
+	{
+		while (array[it] < array[src])
+		{
+			if (array[it] < array[src])
+			{
+				out[it2] = &array[it];
+				it2++;//NOT WORKING, RANDOM NUMBER STORED!
+			}
+			src++;
+		}
+		it++;
+		src = 0;
+	}
+	printf("%d\n", *out[0]);
+	printf("%d\n", *out[1]);
 }
