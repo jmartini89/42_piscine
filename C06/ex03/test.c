@@ -24,7 +24,7 @@ int		main()
 			if (array[it] < array[src])
 			{
 				out[it2] = &array[it];
-				it2++;//NOT WORKING, RANDOM NUMBER STORED!
+				it2++;
 			}
 			src++;
 		}
@@ -32,5 +32,5 @@ int		main()
 		src = 0;
 	}
 	printf("%d\n", *out[0]);
-	printf("%d\n", *out[1]);
+	printf("%d\n", *out[1]);//NOT WORKING, RANDOM NUMBER STORED!
 }
