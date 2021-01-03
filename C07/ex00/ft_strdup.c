@@ -28,13 +28,12 @@ char	*ft_strdup(char *src)
 int		main(void)
 {
 	char *str;
+	char *ptr;
 
-	str = "test";
-	printf("original %s\n", strdup(str));
-	printf("%ld\n", sizeof(strdup(str)));
-	printf("%ld\n", sizeof(str));
-	printf("emulated %s\n", ft_strdup(str));
-	printf("%ld\n", sizeof(ft_strdup(str)));
-
+	str = "RINA";
+	ptr = ft_strdup(str);
+	printf("emulated %s\n", ptr);
+	free(ptr);
+	printf("emulated %s\n", ptr);
 	return (0);
 }
