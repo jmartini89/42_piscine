@@ -5,13 +5,13 @@ int		*ft_range(int min, int max)
 {
 	int *str;
 	int it;
-	int alloc;
+	int size;
 
 	it = 0;
-	alloc = max - min;
-	if (alloc < 0)
-		alloc = 0;
-	str = malloc(sizeof(int) * alloc + 1);
+	size = max - min;
+	if (size < 0)
+		size = 0;
+	str = malloc(sizeof(int) * size + 1);
 	while (min < max)
 	{
 		str[it] = min;
