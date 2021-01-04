@@ -5,10 +5,12 @@ int		*ft_range(int min, int max)
 {
 	int *str;
 	int it;
+	int alloc;
 
 	it = 0;
-	str = malloc(sizeof(max - min));
-	while (str[it])
+	alloc = max - min;
+	str = malloc(sizeof(int) * alloc);
+	while (min < max)
 	{
 		str[it] = min;
 		it++;
@@ -21,9 +23,20 @@ int		main(void)
 {
 	int min;
 	int max;
+	int *out;
+	int it;
+	int a[1];
 
-	min = 10;
+	a[0] = '\0';
+	min = 31;
 	max = 30;
-	printf("%s\n", ft_range(min, max));
+	it = 0;
+	out = ft_range(min, max);
+	printf("%d\n", a[0]);
+	/*while (out[it])
+	{
+		printf("%d\n", out[it]);
+		it++;
+	}*/
 	return (0);
 }
