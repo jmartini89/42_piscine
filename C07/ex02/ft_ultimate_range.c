@@ -11,14 +11,13 @@ int		ft_ultimate_range(int **range, int min, int max)
 
 	printf("pre malloc \t%p\n", range);
 	
-	range = malloc(sizeof(int) * size + 1);
+	range = malloc(sizeof(range) * 10);
 	
 	printf("malloc \t\t%p\n", range);
-	printf("&range \t\t%p\n", &range);
-	printf("&range[0] \t%p\n", &range[0]);
-	printf("&range[1] \t%p\n", &range[1]);
-	printf("&range[2] \t%p\n", &range[2]);
-
+	//printf("&range \t\t%p\n", &range);
+	//printf("&range[0] \t%p\n", &range[0]);
+	//printf("&range[1] \t%p\n", &range[1]);
+	//printf("&range[2] \t%p\n", &range[2]);
 	/*
 	while (min < max)
 	{
@@ -28,6 +27,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 	}
 	*range[it] = '\0';
 	*/
+
 	return size;
 }
 
@@ -40,13 +40,16 @@ int		main(void)
 	int it = 0;
 
 	printf("main \t\t%p\n", range);
+	
+	/*
 	printf("&main \t\t%p\n", &range);
 	printf("&main[0] \t%p\n", &range[0]);
-
-
+	*/
 
 	size = ft_ultimate_range(range, min, max);
 	printf("return size \t%d\n", size);
+
+	printf("OUT MAIN \t%p\n", range);
 
 	/*
 	while (range[it])
