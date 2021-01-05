@@ -8,55 +8,62 @@ int		ft_ultimate_range(int **range, int min, int max)
 
 	it = 0;
 	size = max - min;
-
-	printf("pre malloc \t%p\n", range);
-	
-	range = malloc(sizeof(range) * 10);
-	
-	printf("malloc \t\t%p\n", range);
-	//printf("&range \t\t%p\n", &range);
-	//printf("&range[0] \t%p\n", &range[0]);
-	//printf("&range[1] \t%p\n", &range[1]);
-	//printf("&range[2] \t%p\n", &range[2]);
-	/*
-	while (min < max)
+	if (size <= 0)
 	{
-		*range[it] = min;
-		it++;
-		min++;
+		range = NULL;
+		return (0);
 	}
-	*range[it] = '\0';
-	*/
-
-	return size;
+	if (size)
+	{
+		*range = malloc(sizeof(**range) * size + 1);
+		while (min < max)
+		{
+			range[0][it] = min;
+			min++;
+			it++;
+		}
+		range[0][it] = '\0';
+		return size;
+	}
 }
 
 int		main(void)
 {
-	int **range;
+	int *range;
 	int size;
-	int min = 10;
-	int max = 30;
-	int it = 0;
+	int min;
+	int max;
+	int it;
 
-	printf("main \t\t%p\n", range);
+	range = NULL;
+
+	/* ADDRESS BEFORE MEMALLOC */
+	printf("BEFORE\t&range\t\t%p\n", &range);
+	printf("BEFORE\trange\t\t%p\n", range);
+	printf("BEFORE\t&range[0]\t%p\n", &range[0]);
+	printf("\n");
+
+	min = 10;
+	max = 20;
+	it = 0;
+	size = ft_ultimate_range(&range, min, max);
 	
-	/*
-	printf("&main \t\t%p\n", &range);
-	printf("&main[0] \t%p\n", &range[0]);
-	*/
+	/* ADDRESS AFTER MEMALLOC */
+	printf("AFTER\t&range\t\t%p\n", &range);
+	printf("AFTER\trange\t\t%p\n", range);
+	printf("AFTER\t&range[0]\t%p\n", &range[0]);
+	printf("\n");
 
-	size = ft_ultimate_range(range, min, max);
 	printf("return size \t%d\n", size);
 
-	printf("OUT MAIN \t%p\n", range);
-
-	/*
-	while (range[it])
+	if (range)
 	{
-		printf("%d\n", range[it]);
-		it++;
+		while (range[it])
+		{
+			printf("%d ", range[it]);
+			it++;
+		}
+		printf("\n");
 	}
-	*/
 	return (0);
 }
