@@ -18,12 +18,13 @@ int		*ft_range(int min, int max)
 		it++;
 		min++;
 	}
+	str[it] = '\0';
 	return str;
 }
 
 int		main(void)
 {
-	int min = 29;
+	int min = 20;
 	int max = 30;
 	int it = 0;
 	int *out;
