@@ -33,33 +33,14 @@ char	*ft_strcpy(char *dest, char *src, int nbr)
 	return (dest);
 }
 
-char	*ft_concatenate(int size, char **strs, char *sep, char *output)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
+	char *output;
 	int it;
 	int it2;
 
 	it = 0;
 	it2 = 0;
-	while (strs[it])
-	{
-		output = ft_strcpy(output, strs[it], it2);
-		it2 += ft_strlen(strs[it]);
-		if (it + 1 != size)
-		{
-			output = ft_strcpy(output, sep, it2);
-			it2 += ft_strlen(sep);
-		}
-		it++;
-	}
-	return output;
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char *output;
-	int it;
-
-	it = 0;
 	if (size <= 0)
 	{
 		output = malloc(sizeof(NULL));
@@ -72,7 +53,19 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			output = malloc(sizeof(output) * ft_strlen(sep));
 		it++;
 	}
-	return ft_concatenate(size, strs, sep, output);
+	it = 0;
+	while (strs[it])
+	{
+		output = ft_strcpy(output, strs[it], it2);
+		it2 += ft_strlen(strs[it]);
+		if (it + 1 != size)
+		{
+			output = ft_strcpy(output, sep, it2);
+			it2 += ft_strlen(sep);
+		}
+		it++;
+	}
+	return output;
 }
 
 int		main(void)
@@ -92,7 +85,7 @@ int		main(void)
 	strs[1] = b;
 	strs[2] = c;
 	strs[3] = NULL;
-	sep = "-";
+	sep = "***";
 	printf("%s\n", ft_strjoin(size, strs, sep));
 	return (0);
 }
