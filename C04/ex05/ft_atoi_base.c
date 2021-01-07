@@ -28,7 +28,21 @@ int	ft_check_base(char *str)
 	return (1);
 }
 
-char	*ft_atoi(char *str)
+int		ft_is_based(char c, char *base)
+{
+	int it;
+
+	it = 0;
+	while (base[it])
+	{
+		if (c == base[it])
+			return (0);
+		it++;
+	}
+	return (1);
+}
+
+char	*ft_atoi(char *str, char *base)
 {
 	int i;
 	int k;
@@ -39,25 +53,19 @@ char	*ft_atoi(char *str)
 	sign = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == 32)
 		i++;
-	while (str[i] == '-' || str[i] == '+')//Marcello's is smarter & shorter
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			sign--;
-		if (str[i] == '+')
 			sign++;
 		i++;
 	}
-	if (sign < 0)
+	if (!(sign % 2))
 	{
 		str[k] = '-';
 		k++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'A' && str[i] <= 'F'))
-	{
-		str[k] = str[i];
-		i++;
-		k++;
-	}
+	while(!(ft_is_based(str[i], base)))
+		str[k++] = str[i++];
 	str[k] = '\0';
 	return (str);
 }
@@ -95,44 +103,44 @@ int		ft_check_sign(char *str)
 		return (1);
 }
 
-int		ft_atoi_base(char *str, char *base)//CUT 6 LINES!
+void	ft_init(int *it, int *nbr, int *len, char *str)
+{
+	*it = 0;
+	*nbr = 0;
+	*len = ft_strlen(str);
+}
+
+int		ft_atoi_base(char *str, char *base)
 {
 	int nbr;
-	int size;
 	int it;
 	int pwr;
 	int len;
 	int len2;
-	int sign;
 
-	ft_atoi(str);
-	it = 0;
-	size = ft_base_size(base);
-	sign = ft_check_sign(str);
-	len = ft_strlen(str);
-	if (ft_check_base(base))
+	ft_atoi(str, base);
+	ft_init(&it, &nbr, &len, str);
+	if (!(ft_check_base(base)))
+		return (0);
+	if (ft_check_sign(str) < 0)
+		it++;
+	while (str[it])
 	{
-		if (sign < 0)
-			it++;
-		while (str[it])
-		{
-			pwr = 1;
-			len2 = len--;
-			while (len2-- > 1)
-				pwr = pwr * size;
-			if (str[it] > '9')
-				str[it] -= 7;
-			nbr += ((str[it] - '0') * pwr);
-			it++;
-		}
-		return (nbr * sign);
+		pwr = 1;
+		len2 = len--;
+		while (len2-- > 1)
+			pwr = pwr * ft_base_size(base);
+		if (str[it] > '9')
+			str[it] -= 7;
+		nbr += ((str[it] - '0') * pwr);
+		it++;
 	}
-	return (0);
+	return (nbr * ft_check_sign(str));
 }
 
 int		main()
 {
-	char str[] = "        -+2A ab567";
+	char str[] = "        -+2Aab567";
 	char dec[] = "0123456789";//42
 	char bin[] = "01";//101010
 	char hex[] = "0123456789ABCDEF";//2A

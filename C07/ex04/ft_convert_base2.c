@@ -1,4 +1,6 @@
-int	ft_check_base(char *str)
+/* SUPPORT FUNCTIONS */
+
+int		ft_check_base(char *str)
 {
 	int it;
 	int src;
@@ -25,6 +27,10 @@ int	ft_check_base(char *str)
 	return (1);
 }
 
+
+
+/* TEMP DUMP AFTER HERE */
+
 char	*ft_atoi(char *str)
 {
 	int i;
@@ -36,7 +42,7 @@ char	*ft_atoi(char *str)
 	sign = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == 32)
 		i++;
-	while (str[i] == '-' || str[i] == '+')//Marcello's is smarter & shorter
+	while (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign--;
@@ -49,7 +55,7 @@ char	*ft_atoi(char *str)
 		str[k] = '-';
 		k++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'A' && str[i] <= 'F'))
+	while ((str[i] >= '0' && str[i] <= '9') || (str[i] >= 'A' && str[i] <= 'F')) //WRONG!!! USE BASE INSTEAD
 	{
 		str[k] = str[i];
 		i++;
@@ -59,7 +65,6 @@ char	*ft_atoi(char *str)
 	return (str);
 }
 
-/* UNUSED */
 int		ft_strlen(char *str)
 {
 	int i;
@@ -75,7 +80,6 @@ int		ft_strlen(char *str)
 		return (i);
 }
 
-/* UNUSED */
 int		ft_base_size(char *str)
 {
 	int size;
