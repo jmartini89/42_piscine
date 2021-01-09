@@ -13,23 +13,16 @@ int		ft_strlen(char *str)
 
 char	*ft_strcpy(char *dest, char *src, int nbr)
 {
-	printf("ENTRY\t%d\n", nbr);
-	printf("ENTRY\t%s\n", dest);
-	printf("ENTRY\t%s\n", src);
 	int i;
 
 	i = 0;
 	while (src[i])
 	{
 		dest[nbr] = src[i];
-		printf("%c\n", dest[nbr]);
 		i++;
 		nbr++;
 	}
 	dest[nbr] = '\0';
-	printf("EXIT\t%d\n", nbr);
-	printf("EXIT\t%s\n", dest);
-	printf("\n");
 	return (dest);
 }
 
@@ -57,9 +50,13 @@ char	*ft_concatenate(int size, char **strs, char *sep, char *output)
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char *output;
+	int a;
+	int b;
 	int it;
 
 	it = 0;
+	a = 0;
+	b = 0;
 	if (size <= 0)
 	{
 		output = malloc(sizeof(NULL));
@@ -67,18 +64,21 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	}
 	while (strs[it])
 	{
-		output = malloc(sizeof(output) * ft_strlen(strs[it]));
-		if (it + 1 != size)
-			output = malloc(sizeof(output) * ft_strlen(sep));
+		a += ft_strlen(strs[it]);
+		if (it + 1 < size)
+			b += ft_strlen(sep);
 		it++;
 	}
-	return ft_concatenate(size, strs, sep, output);
+	output = malloc(sizeof(*output) * (a + b) + 1);
+	output = ft_concatenate(size, strs, sep, output);
+	return output;
 }
 
 int		main(void)
 {
 	int size;
 	char *strs[4];
+	char *join;
 	char *sep;
 	char *a;
 	char *b;
@@ -93,6 +93,8 @@ int		main(void)
 	strs[2] = c;
 	strs[3] = NULL;
 	sep = "-";
-	printf("%s\n", ft_strjoin(size, strs, sep));
+	join = ft_strjoin(size, strs, sep);
+	printf("%s\n", join);
+	free(join);
 	return (0);
 }
