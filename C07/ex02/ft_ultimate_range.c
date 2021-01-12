@@ -15,7 +15,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 	}
 	if (size)
 	{
-		*range = malloc(sizeof(**range) * size + 1);
+		*range = malloc(sizeof(**range) * size + 4);
 		while (min < max)
 		{
 			range[0][it] = min;

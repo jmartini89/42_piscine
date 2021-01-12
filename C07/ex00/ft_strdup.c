@@ -2,6 +2,16 @@
 #include <string.h>
 #include <stdio.h>
 
+int	ft_strlen(char *str)
+{
+	int it;
+
+	it = 0;
+	while (str[it])
+		it++;
+	return it;
+}
+
 char	*ft_strcpy(char *dest, char *src)
 {
 	int i;
@@ -20,7 +30,7 @@ char	*ft_strdup(char *src)
 {
 	char *newstr;
 
-	newstr = malloc(sizeof(src));
+	newstr = malloc(sizeof(*newstr) * ft_strlen(src) + 1);
 	ft_strcpy(newstr, src);
 	return newstr;
 }
@@ -34,6 +44,5 @@ int		main(void)
 	ptr = ft_strdup(str);
 	printf("emulated %s\n", ptr);
 	free(ptr);
-	printf("emulated %s\n", ptr);
 	return (0);
 }

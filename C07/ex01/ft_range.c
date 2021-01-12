@@ -11,7 +11,7 @@ int		*ft_range(int min, int max)
 	size = max - min;
 	if (size < 0)
 		size = 0;
-	str = malloc(sizeof(int) * size + 1);
+	str = malloc(sizeof(*str) * (size + 1));
 	while (min < max)
 	{
 		str[it] = min;
@@ -24,7 +24,7 @@ int		*ft_range(int min, int max)
 
 int		main(void)
 {
-	int min = 20;
+	int min = 3;
 	int max = 30;
 	int it = 0;
 	int *out;
